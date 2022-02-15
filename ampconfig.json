@@ -1,0 +1,19 @@
+{
+  "dataServiceGeneratorVersion": "0.11.2",
+  "appInfo": {
+    "name": "Logi-dental",
+    "description": "",
+    "version": "ns4hykd6",
+    "id": "ckznuzqfx97935601s60wypydk4",
+    "url": "https://app.amplication.com/ckznuzqfx97935601s60wypydk4",
+    "settings": {
+      "dbHost": "localhost",
+      "dbName": "",
+      "dbPassword": "admin",
+      "dbPort": 5432,
+      "dbUser": "admin",
+      "appId": "ckznuzqfx97935601s60wypydk4",
+      "authProvider": "Jwt"
+    }
+  }
+}
