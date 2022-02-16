@@ -11,12 +11,31 @@
   */
 import { ObjectType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
-import { IsDate, IsString, ValidateNested, IsOptional } from "class-validator";
+import {
+  IsString,
+  IsOptional,
+  IsDate,
+  IsNumber,
+  IsInt,
+  IsBoolean,
+  ValidateNested,
+} from "class-validator";
 import { Type } from "class-transformer";
 import { Patient } from "../../patient/base/Patient";
 import { Treatment } from "../../treatment/base/Treatment";
 @ObjectType()
 class Appointment {
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  complaint!: string | null;
+
   @ApiProperty({
     required: true,
   })
@@ -34,12 +53,78 @@ class Appointment {
   date!: Date;
 
   @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  diagnosis!: string | null;
+
+  @ApiProperty({
+    required: false,
+    type: Number,
+  })
+  @IsNumber()
+  @IsOptional()
+  @Field(() => Number, {
+    nullable: true,
+  })
+  finalPrice!: number | null;
+
+  @ApiProperty({
     required: true,
     type: String,
   })
   @IsString()
   @Field(() => String)
   id!: string;
+
+  @ApiProperty({
+    required: false,
+    type: Number,
+  })
+  @IsInt()
+  @IsOptional()
+  @Field(() => Number, {
+    nullable: true,
+  })
+  involvedTeeth!: number | null;
+
+  @ApiProperty({
+    required: false,
+    type: Boolean,
+  })
+  @IsBoolean()
+  @IsOptional()
+  @Field(() => Boolean, {
+    nullable: true,
+  })
+  isDone!: boolean | null;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  notes!: string | null;
+
+  @ApiProperty({
+    required: false,
+    type: Number,
+  })
+  @IsNumber()
+  @IsOptional()
+  @Field(() => Number, {
+    nullable: true,
+  })
+  paidAmount!: number | null;
 
   @ApiProperty({
     required: false,
@@ -58,6 +143,17 @@ class Appointment {
   @Type(() => Treatment)
   @IsOptional()
   treatment?: Treatment | null;
+
+  @ApiProperty({
+    required: false,
+    type: Number,
+  })
+  @IsInt()
+  @IsOptional()
+  @Field(() => Number, {
+    nullable: true,
+  })
+  units!: number | null;
 
   @ApiProperty({
     required: true,

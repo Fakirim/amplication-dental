@@ -11,12 +11,31 @@
   */
 import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
-import { IsDate, ValidateNested, IsOptional } from "class-validator";
+import {
+  IsString,
+  IsOptional,
+  IsDate,
+  IsNumber,
+  IsInt,
+  IsBoolean,
+  ValidateNested,
+} from "class-validator";
 import { Type } from "class-transformer";
 import { PatientWhereUniqueInput } from "../../patient/base/PatientWhereUniqueInput";
 import { TreatmentWhereUniqueInput } from "../../treatment/base/TreatmentWhereUniqueInput";
 @InputType()
 class AppointmentCreateInput {
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  complaint?: string | null;
+
   @ApiProperty({
     required: true,
   })
@@ -24,6 +43,72 @@ class AppointmentCreateInput {
   @Type(() => Date)
   @Field(() => Date)
   date!: Date;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  diagnosis?: string | null;
+
+  @ApiProperty({
+    required: false,
+    type: Number,
+  })
+  @IsNumber()
+  @IsOptional()
+  @Field(() => Number, {
+    nullable: true,
+  })
+  finalPrice?: number | null;
+
+  @ApiProperty({
+    required: false,
+    type: Number,
+  })
+  @IsInt()
+  @IsOptional()
+  @Field(() => Number, {
+    nullable: true,
+  })
+  involvedTeeth?: number | null;
+
+  @ApiProperty({
+    required: false,
+    type: Boolean,
+  })
+  @IsBoolean()
+  @IsOptional()
+  @Field(() => Boolean, {
+    nullable: true,
+  })
+  isDone?: boolean | null;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  notes?: string | null;
+
+  @ApiProperty({
+    required: false,
+    type: Number,
+  })
+  @IsNumber()
+  @IsOptional()
+  @Field(() => Number, {
+    nullable: true,
+  })
+  paidAmount?: number | null;
 
   @ApiProperty({
     required: false,
@@ -48,5 +133,16 @@ class AppointmentCreateInput {
     nullable: true,
   })
   treatment?: TreatmentWhereUniqueInput | null;
+
+  @ApiProperty({
+    required: false,
+    type: Number,
+  })
+  @IsInt()
+  @IsOptional()
+  @Field(() => Number, {
+    nullable: true,
+  })
+  units?: number | null;
 }
 export { AppointmentCreateInput };

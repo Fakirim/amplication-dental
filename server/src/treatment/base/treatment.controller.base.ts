@@ -75,7 +75,9 @@ export class TreatmentControllerBase {
       data: data,
       select: {
         createdAt: true,
+        expenses: true,
         id: true,
+        name: true,
         updatedAt: true,
       },
     });
@@ -111,7 +113,9 @@ export class TreatmentControllerBase {
       ...args,
       select: {
         createdAt: true,
+        expenses: true,
         id: true,
+        name: true,
         updatedAt: true,
       },
     });
@@ -146,7 +150,9 @@ export class TreatmentControllerBase {
       where: params,
       select: {
         createdAt: true,
+        expenses: true,
         id: true,
+        name: true,
         updatedAt: true,
       },
     });
@@ -202,7 +208,9 @@ export class TreatmentControllerBase {
         data: data,
         select: {
           createdAt: true,
+          expenses: true,
           id: true,
+          name: true,
           updatedAt: true,
         },
       });
@@ -238,7 +246,9 @@ export class TreatmentControllerBase {
         where: params,
         select: {
           createdAt: true,
+          expenses: true,
           id: true,
+          name: true,
           updatedAt: true,
         },
       });
@@ -279,9 +289,16 @@ export class TreatmentControllerBase {
     const results = await this.service.findAppointments(params.id, {
       ...query,
       select: {
+        complaint: true,
         createdAt: true,
         date: true,
+        diagnosis: true,
+        finalPrice: true,
         id: true,
+        involvedTeeth: true,
+        isDone: true,
+        notes: true,
+        paidAmount: true,
 
         patient: {
           select: {
@@ -295,6 +312,7 @@ export class TreatmentControllerBase {
           },
         },
 
+        units: true,
         updatedAt: true,
       },
     });

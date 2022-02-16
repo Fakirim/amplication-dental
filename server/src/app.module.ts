@@ -5,6 +5,7 @@ import { PatientModule } from "./patient/patient.module";
 import { SettingModule } from "./setting/setting.module";
 import { AppointmentModule } from "./appointment/appointment.module";
 import { TreatmentModule } from "./treatment/treatment.module";
+import { PrescriptionModule } from "./prescription/prescription.module";
 import { ACLModule } from "./auth/acl.module";
 import { AuthModule } from "./auth/auth.module";
 import { HealthModule } from "./health/health.module";
@@ -24,6 +25,7 @@ import { GraphQLModule } from "@nestjs/graphql";
     SettingModule,
     AppointmentModule,
     TreatmentModule,
+    PrescriptionModule,
     ACLModule,
     AuthModule,
     HealthModule,

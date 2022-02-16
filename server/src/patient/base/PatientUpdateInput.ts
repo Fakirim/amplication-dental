@@ -11,7 +11,8 @@
   */
 import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
-import { IsString, IsOptional } from "class-validator";
+import { IsString, IsOptional, IsDate } from "class-validator";
+import { Type } from "class-transformer";
 @InputType()
 class PatientUpdateInput {
   @ApiProperty({
@@ -34,7 +35,51 @@ class PatientUpdateInput {
   @Field(() => String, {
     nullable: true,
   })
+  avatar?: string | null;
+
+  @ApiProperty({
+    required: false,
+  })
+  @IsDate()
+  @Type(() => Date)
+  @IsOptional()
+  @Field(() => Date, {
+    nullable: true,
+  })
+  birthYear?: Date | null;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  email?: string | null;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
   firstName?: string | null;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  gallery?: string | null;
 
   @ApiProperty({
     required: false,
@@ -57,5 +102,16 @@ class PatientUpdateInput {
     nullable: true,
   })
   phone?: string | null;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  tags?: string | null;
 }
 export { PatientUpdateInput };

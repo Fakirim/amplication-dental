@@ -9,5 +9,31 @@
 //
 //------------------------------------------------------------------------------
   */
-class TreatmentCreateInput {}
+import { InputType, Field } from "@nestjs/graphql";
+import { ApiProperty } from "@nestjs/swagger";
+import { IsNumber, IsOptional, IsString } from "class-validator";
+@InputType()
+class TreatmentCreateInput {
+  @ApiProperty({
+    required: false,
+    type: Number,
+  })
+  @IsNumber()
+  @IsOptional()
+  @Field(() => Number, {
+    nullable: true,
+  })
+  expenses?: number | null;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  name?: string | null;
+}
 export { TreatmentCreateInput };

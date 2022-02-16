@@ -29,6 +29,10 @@ import { TreatmentList } from "./treatment/TreatmentList";
 import { TreatmentCreate } from "./treatment/TreatmentCreate";
 import { TreatmentEdit } from "./treatment/TreatmentEdit";
 import { TreatmentShow } from "./treatment/TreatmentShow";
+import { PrescriptionList } from "./prescription/PrescriptionList";
+import { PrescriptionCreate } from "./prescription/PrescriptionCreate";
+import { PrescriptionEdit } from "./prescription/PrescriptionEdit";
+import { PrescriptionShow } from "./prescription/PrescriptionShow";
 import { jwtAuthProvider } from "./auth-provider/ra-auth-jwt";
 
 const App = (): React.ReactElement => {
@@ -96,6 +100,13 @@ const App = (): React.ReactElement => {
           edit={TreatmentEdit}
           create={TreatmentCreate}
           show={TreatmentShow}
+        />
+        <Resource
+          name="Prescription"
+          list={PrescriptionList}
+          edit={PrescriptionEdit}
+          create={PrescriptionCreate}
+          show={PrescriptionShow}
         />
       </Admin>
     </div>

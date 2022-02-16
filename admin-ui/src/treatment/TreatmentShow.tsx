@@ -8,6 +8,7 @@ import {
   TextField,
   ReferenceManyField,
   Datagrid,
+  BooleanField,
   ReferenceField,
 } from "react-admin";
 
@@ -19,7 +20,9 @@ export const TreatmentShow = (props: ShowProps): React.ReactElement => {
     <Show {...props}>
       <SimpleShowLayout>
         <DateField source="createdAt" label="Created At" />
+        <TextField label="expenses" source="expenses" />
         <TextField label="ID" source="id" />
+        <TextField label="name" source="name" />
         <DateField source="updatedAt" label="Updated At" />
         <ReferenceManyField
           reference="Appointment"
@@ -27,9 +30,16 @@ export const TreatmentShow = (props: ShowProps): React.ReactElement => {
           label="Appointments"
         >
           <Datagrid rowClick="show">
+            <TextField label="complaint" source="complaint" />
             <DateField source="createdAt" label="Created At" />
             <TextField label="date" source="date" />
+            <TextField label="diagnosis" source="diagnosis" />
+            <TextField label="finalPrice" source="finalPrice" />
             <TextField label="ID" source="id" />
+            <TextField label="involvedTeeth" source="involvedTeeth" />
+            <BooleanField label="isDone" source="isDone" />
+            <TextField label="notes" source="notes" />
+            <TextField label="paidAmount" source="paidAmount" />
             <ReferenceField
               label="patient"
               source="patient.id"
@@ -44,6 +54,7 @@ export const TreatmentShow = (props: ShowProps): React.ReactElement => {
             >
               <TextField source={TREATMENT_TITLE_FIELD} />
             </ReferenceField>
+            <TextField label="units" source="units" />
             <DateField source="updatedAt" label="Updated At" />
           </Datagrid>
         </ReferenceManyField>

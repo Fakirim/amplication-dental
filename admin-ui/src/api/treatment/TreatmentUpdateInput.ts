@@ -1,1 +1,4 @@
-export type TreatmentUpdateInput = {};
+export type TreatmentUpdateInput = {
+  expenses?: number | null;
+  name?: string | null;
+};

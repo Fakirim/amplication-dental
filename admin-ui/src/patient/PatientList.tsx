@@ -13,11 +13,16 @@ export const PatientList = (props: ListProps): React.ReactElement => {
     >
       <Datagrid rowClick="show">
         <TextField label="address" source="address" />
+        <TextField label="avatar" source="avatar" />
+        <TextField label="birthYear" source="birthYear" />
         <DateField source="createdAt" label="Created At" />
+        <TextField label="email" source="email" />
         <TextField label="firstName" source="firstName" />
+        <TextField label="gallery" source="gallery" />
         <TextField label="ID" source="id" />
         <TextField label="lastName" source="lastName" />
         <TextField label="phone" source="phone" />
+        <TextField label="tags" source="tags" />
         <DateField source="updatedAt" label="Updated At" />
       </Datagrid>
     </List>

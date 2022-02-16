@@ -23,6 +23,7 @@ model Personnel {
   email     String   @unique
   id        String   @id @default(cuid())
   name      String
+  operates  String?
   phone     String?
   updatedAt DateTime @updatedAt
 }
@@ -30,11 +31,16 @@ model Personnel {
 model Patient {
   address      String?
   appointments Appointment[]
+  avatar       String?
+  birthYear    DateTime?
   createdAt    DateTime      @default(now())
+  email        String?
   firstName    String?
+  gallery      String?
   id           String        @id @default(cuid())
   lastName     String?
   phone        String?
+  tags         String?
   updatedAt    DateTime      @updatedAt
 }
 
@@ -47,19 +53,39 @@ model Setting {
 }
 
 model Appointment {
-  createdAt   DateTime   @default(now())
-  date        DateTime
-  id          String     @id @default(cuid())
-  patient     Patient?   @relation(fields: [patientId], references: [id])
-  patientId   String?
-  treatment   Treatment? @relation(fields: [treatmentId], references: [id])
-  treatmentId String?
-  updatedAt   DateTime   @updatedAt
+  complaint     String?
+  createdAt     DateTime   @default(now())
+  date          DateTime
+  diagnosis     String?
+  finalPrice    Float?
+  id            String     @id @default(cuid())
+  involvedTeeth Int?
+  isDone        Boolean?
+  notes         String?
+  paidAmount    Float?
+  patient       Patient?   @relation(fields: [patientId], references: [id])
+  patientId     String?
+  treatment     Treatment? @relation(fields: [treatmentId], references: [id])
+  treatmentId   String?
+  units         Int?
+  updatedAt     DateTime   @updatedAt
 }
 
 model Treatment {
   appointments Appointment[]
   createdAt    DateTime      @default(now())
+  expenses     Float?
   id           String        @id @default(cuid())
+  name         String?
   updatedAt    DateTime      @updatedAt
+}
+
+model Prescription {
+  createdAt    DateTime @default(now())
+  doseInMg     Int?
+  id           String   @id @default(cuid())
+  name         String?
+  timesPerDay  Int?
+  unitsPerTime Int?
+  updatedAt    DateTime @updatedAt
 }

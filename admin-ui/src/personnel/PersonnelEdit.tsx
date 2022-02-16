@@ -7,6 +7,7 @@ export const PersonnelEdit = (props: EditProps): React.ReactElement => {
       <SimpleForm>
         <TextInput label="email" source="email" type="email" />
         <TextInput label="name" source="name" />
+        <TextInput label="operates" source="operates" />
         <TextInput label="phone" source="phone" />
       </SimpleForm>
     </Edit>
