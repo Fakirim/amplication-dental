@@ -37,6 +37,28 @@ class Patient {
   appointments?: Array<Appointment>;
 
   @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  avatar!: string | null;
+
+  @ApiProperty({
+    required: false,
+  })
+  @IsDate()
+  @Type(() => Date)
+  @IsOptional()
+  @Field(() => Date, {
+    nullable: true,
+  })
+  birthYear!: Date | null;
+
+  @ApiProperty({
     required: true,
   })
   @IsDate()
@@ -53,7 +75,29 @@ class Patient {
   @Field(() => String, {
     nullable: true,
   })
+  email!: string | null;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
   firstName!: string | null;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  gallery!: string | null;
 
   @ApiProperty({
     required: true,
@@ -84,6 +128,17 @@ class Patient {
     nullable: true,
   })
   phone!: string | null;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  tags!: string | null;
 
   @ApiProperty({
     required: true,

@@ -5,6 +5,7 @@ export type PersonnelOrderByInput = {
   email?: SortOrder;
   id?: SortOrder;
   name?: SortOrder;
+  operates?: SortOrder;
   phone?: SortOrder;
   updatedAt?: SortOrder;
 };

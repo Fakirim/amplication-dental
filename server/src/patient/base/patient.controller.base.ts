@@ -75,11 +75,16 @@ export class PatientControllerBase {
       data: data,
       select: {
         address: true,
+        avatar: true,
+        birthYear: true,
         createdAt: true,
+        email: true,
         firstName: true,
+        gallery: true,
         id: true,
         lastName: true,
         phone: true,
+        tags: true,
         updatedAt: true,
       },
     });
@@ -115,11 +120,16 @@ export class PatientControllerBase {
       ...args,
       select: {
         address: true,
+        avatar: true,
+        birthYear: true,
         createdAt: true,
+        email: true,
         firstName: true,
+        gallery: true,
         id: true,
         lastName: true,
         phone: true,
+        tags: true,
         updatedAt: true,
       },
     });
@@ -154,11 +164,16 @@ export class PatientControllerBase {
       where: params,
       select: {
         address: true,
+        avatar: true,
+        birthYear: true,
         createdAt: true,
+        email: true,
         firstName: true,
+        gallery: true,
         id: true,
         lastName: true,
         phone: true,
+        tags: true,
         updatedAt: true,
       },
     });
@@ -214,11 +229,16 @@ export class PatientControllerBase {
         data: data,
         select: {
           address: true,
+          avatar: true,
+          birthYear: true,
           createdAt: true,
+          email: true,
           firstName: true,
+          gallery: true,
           id: true,
           lastName: true,
           phone: true,
+          tags: true,
           updatedAt: true,
         },
       });
@@ -254,11 +274,16 @@ export class PatientControllerBase {
         where: params,
         select: {
           address: true,
+          avatar: true,
+          birthYear: true,
           createdAt: true,
+          email: true,
           firstName: true,
+          gallery: true,
           id: true,
           lastName: true,
           phone: true,
+          tags: true,
           updatedAt: true,
         },
       });
@@ -299,9 +324,16 @@ export class PatientControllerBase {
     const results = await this.service.findAppointments(params.id, {
       ...query,
       select: {
+        complaint: true,
         createdAt: true,
         date: true,
+        diagnosis: true,
+        finalPrice: true,
         id: true,
+        involvedTeeth: true,
+        isDone: true,
+        notes: true,
+        paidAmount: true,
 
         patient: {
           select: {
@@ -315,6 +347,7 @@ export class PatientControllerBase {
           },
         },
 
+        units: true,
         updatedAt: true,
       },
     });

@@ -3,6 +3,7 @@ export type Personnel = {
   email: string;
   id: string;
   name: string;
+  operates: string | null;
   phone: string | null;
   updatedAt: Date;
 };

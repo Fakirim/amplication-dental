@@ -15,6 +15,7 @@ export const PersonnelShow = (props: ShowProps): React.ReactElement => {
         <TextField label="email" source="email" />
         <TextField label="ID" source="id" />
         <TextField label="name" source="name" />
+        <TextField label="operates" source="operates" />
         <TextField label="phone" source="phone" />
         <DateField source="updatedAt" label="Updated At" />
       </SimpleShowLayout>

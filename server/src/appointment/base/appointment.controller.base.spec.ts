@@ -11,29 +11,61 @@ import { AppointmentService } from "../appointment.service";
 const nonExistingId = "nonExistingId";
 const existingId = "existingId";
 const CREATE_INPUT = {
+  complaint: "exampleComplaint",
   createdAt: new Date(),
   date: new Date(),
+  diagnosis: "exampleDiagnosis",
+  finalPrice: 42.42,
   id: "exampleId",
+  involvedTeeth: 42,
+  isDone: "true",
+  notes: "exampleNotes",
+  paidAmount: 42.42,
+  units: 42,
   updatedAt: new Date(),
 };
 const CREATE_RESULT = {
+  complaint: "exampleComplaint",
   createdAt: new Date(),
   date: new Date(),
+  diagnosis: "exampleDiagnosis",
+  finalPrice: 42.42,
   id: "exampleId",
+  involvedTeeth: 42,
+  isDone: "true",
+  notes: "exampleNotes",
+  paidAmount: 42.42,
+  units: 42,
   updatedAt: new Date(),
 };
 const FIND_MANY_RESULT = [
   {
+    complaint: "exampleComplaint",
     createdAt: new Date(),
     date: new Date(),
+    diagnosis: "exampleDiagnosis",
+    finalPrice: 42.42,
     id: "exampleId",
+    involvedTeeth: 42,
+    isDone: "true",
+    notes: "exampleNotes",
+    paidAmount: 42.42,
+    units: 42,
     updatedAt: new Date(),
   },
 ];
 const FIND_ONE_RESULT = {
+  complaint: "exampleComplaint",
   createdAt: new Date(),
   date: new Date(),
+  diagnosis: "exampleDiagnosis",
+  finalPrice: 42.42,
   id: "exampleId",
+  involvedTeeth: 42,
+  isDone: "true",
+  notes: "exampleNotes",
+  paidAmount: 42.42,
+  units: 42,
   updatedAt: new Date(),
 };
 

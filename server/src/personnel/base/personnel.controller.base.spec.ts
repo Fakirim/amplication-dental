@@ -15,6 +15,7 @@ const CREATE_INPUT = {
   email: "exampleEmail",
   id: "exampleId",
   name: "exampleName",
+  operates: "exampleOperates",
   phone: "examplePhone",
   updatedAt: new Date(),
 };
@@ -23,6 +24,7 @@ const CREATE_RESULT = {
   email: "exampleEmail",
   id: "exampleId",
   name: "exampleName",
+  operates: "exampleOperates",
   phone: "examplePhone",
   updatedAt: new Date(),
 };
@@ -32,6 +34,7 @@ const FIND_MANY_RESULT = [
     email: "exampleEmail",
     id: "exampleId",
     name: "exampleName",
+    operates: "exampleOperates",
     phone: "examplePhone",
     updatedAt: new Date(),
   },
@@ -41,6 +44,7 @@ const FIND_ONE_RESULT = {
   email: "exampleEmail",
   id: "exampleId",
   name: "exampleName",
+  operates: "exampleOperates",
   phone: "examplePhone",
   updatedAt: new Date(),
 };

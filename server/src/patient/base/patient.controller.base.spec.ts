@@ -12,40 +12,60 @@ const nonExistingId = "nonExistingId";
 const existingId = "existingId";
 const CREATE_INPUT = {
   address: "exampleAddress",
+  avatar: "exampleAvatar",
+  birthYear: new Date(),
   createdAt: new Date(),
+  email: "exampleEmail",
   firstName: "exampleFirstName",
+  gallery: "exampleGallery",
   id: "exampleId",
   lastName: "exampleLastName",
   phone: "examplePhone",
+  tags: "exampleTags",
   updatedAt: new Date(),
 };
 const CREATE_RESULT = {
   address: "exampleAddress",
+  avatar: "exampleAvatar",
+  birthYear: new Date(),
   createdAt: new Date(),
+  email: "exampleEmail",
   firstName: "exampleFirstName",
+  gallery: "exampleGallery",
   id: "exampleId",
   lastName: "exampleLastName",
   phone: "examplePhone",
+  tags: "exampleTags",
   updatedAt: new Date(),
 };
 const FIND_MANY_RESULT = [
   {
     address: "exampleAddress",
+    avatar: "exampleAvatar",
+    birthYear: new Date(),
     createdAt: new Date(),
+    email: "exampleEmail",
     firstName: "exampleFirstName",
+    gallery: "exampleGallery",
     id: "exampleId",
     lastName: "exampleLastName",
     phone: "examplePhone",
+    tags: "exampleTags",
     updatedAt: new Date(),
   },
 ];
 const FIND_ONE_RESULT = {
   address: "exampleAddress",
+  avatar: "exampleAvatar",
+  birthYear: new Date(),
   createdAt: new Date(),
+  email: "exampleEmail",
   firstName: "exampleFirstName",
+  gallery: "exampleGallery",
   id: "exampleId",
   lastName: "exampleLastName",
   phone: "examplePhone",
+  tags: "exampleTags",
   updatedAt: new Date(),
 };
 
@@ -112,6 +132,7 @@ describe("Patient", () => {
       .expect(HttpStatus.CREATED)
       .expect({
         ...CREATE_RESULT,
+        birthYear: CREATE_RESULT.birthYear.toISOString(),
         createdAt: CREATE_RESULT.createdAt.toISOString(),
         updatedAt: CREATE_RESULT.updatedAt.toISOString(),
       });
@@ -124,6 +145,7 @@ describe("Patient", () => {
       .expect([
         {
           ...FIND_MANY_RESULT[0],
+          birthYear: FIND_MANY_RESULT[0].birthYear.toISOString(),
           createdAt: FIND_MANY_RESULT[0].createdAt.toISOString(),
           updatedAt: FIND_MANY_RESULT[0].updatedAt.toISOString(),
         },
@@ -147,6 +169,7 @@ describe("Patient", () => {
       .expect(HttpStatus.OK)
       .expect({
         ...FIND_ONE_RESULT,
+        birthYear: FIND_ONE_RESULT.birthYear.toISOString(),
         createdAt: FIND_ONE_RESULT.createdAt.toISOString(),
         updatedAt: FIND_ONE_RESULT.updatedAt.toISOString(),
       });

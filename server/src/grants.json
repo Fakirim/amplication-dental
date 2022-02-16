@@ -376,5 +376,95 @@
     "resource": "Treatment",
     "action": "read:any",
     "attributes": "*"
+  },
+  {
+    "role": "doctor",
+    "resource": "Prescription",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Prescription",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "receptionist",
+    "resource": "Prescription",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "doctor",
+    "resource": "Prescription",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Prescription",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "receptionist",
+    "resource": "Prescription",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "doctor",
+    "resource": "Prescription",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Prescription",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "receptionist",
+    "resource": "Prescription",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "doctor",
+    "resource": "Prescription",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Prescription",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "receptionist",
+    "resource": "Prescription",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "doctor",
+    "resource": "Prescription",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Prescription",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "receptionist",
+    "resource": "Prescription",
+    "action": "read:any",
+    "attributes": "*"
   }
 ]

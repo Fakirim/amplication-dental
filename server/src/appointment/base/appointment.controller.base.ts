@@ -86,9 +86,16 @@ export class AppointmentControllerBase {
           : undefined,
       },
       select: {
+        complaint: true,
         createdAt: true,
         date: true,
+        diagnosis: true,
+        finalPrice: true,
         id: true,
+        involvedTeeth: true,
+        isDone: true,
+        notes: true,
+        paidAmount: true,
 
         patient: {
           select: {
@@ -102,6 +109,7 @@ export class AppointmentControllerBase {
           },
         },
 
+        units: true,
         updatedAt: true,
       },
     });
@@ -136,9 +144,16 @@ export class AppointmentControllerBase {
     const results = await this.service.findMany({
       ...args,
       select: {
+        complaint: true,
         createdAt: true,
         date: true,
+        diagnosis: true,
+        finalPrice: true,
         id: true,
+        involvedTeeth: true,
+        isDone: true,
+        notes: true,
+        paidAmount: true,
 
         patient: {
           select: {
@@ -152,6 +167,7 @@ export class AppointmentControllerBase {
           },
         },
 
+        units: true,
         updatedAt: true,
       },
     });
@@ -185,9 +201,16 @@ export class AppointmentControllerBase {
     const result = await this.service.findOne({
       where: params,
       select: {
+        complaint: true,
         createdAt: true,
         date: true,
+        diagnosis: true,
+        finalPrice: true,
         id: true,
+        involvedTeeth: true,
+        isDone: true,
+        notes: true,
+        paidAmount: true,
 
         patient: {
           select: {
@@ -201,6 +224,7 @@ export class AppointmentControllerBase {
           },
         },
 
+        units: true,
         updatedAt: true,
       },
     });
@@ -269,9 +293,16 @@ export class AppointmentControllerBase {
             : undefined,
         },
         select: {
+          complaint: true,
           createdAt: true,
           date: true,
+          diagnosis: true,
+          finalPrice: true,
           id: true,
+          involvedTeeth: true,
+          isDone: true,
+          notes: true,
+          paidAmount: true,
 
           patient: {
             select: {
@@ -285,6 +316,7 @@ export class AppointmentControllerBase {
             },
           },
 
+          units: true,
           updatedAt: true,
         },
       });
@@ -319,9 +351,16 @@ export class AppointmentControllerBase {
       return await this.service.delete({
         where: params,
         select: {
+          complaint: true,
           createdAt: true,
           date: true,
+          diagnosis: true,
+          finalPrice: true,
           id: true,
+          involvedTeeth: true,
+          isDone: true,
+          notes: true,
+          paidAmount: true,
 
           patient: {
             select: {
@@ -335,6 +374,7 @@ export class AppointmentControllerBase {
             },
           },
 
+          units: true,
           updatedAt: true,
         },
       });

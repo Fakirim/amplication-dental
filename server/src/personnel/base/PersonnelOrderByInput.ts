@@ -61,6 +61,15 @@ class PersonnelOrderByInput {
   @Field(() => SortOrder, {
     nullable: true,
   })
+  operates?: SortOrder;
+
+  @ApiProperty({
+    required: false,
+    enum: ["Asc", "Desc"],
+  })
+  @Field(() => SortOrder, {
+    nullable: true,
+  })
   phone?: SortOrder;
 
   @ApiProperty({
